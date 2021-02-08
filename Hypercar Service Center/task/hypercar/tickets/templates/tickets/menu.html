@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include 'tickets/base.html' %}
+<body class="sheet">
+    <center>
+        <h1 id="head">Menu</h1>
+        <div class="items">
+        <p>Change the service:</p>
+        {% for ref, name in services.items %}
+            <p><a href="/get_ticket/{{ ref }}">{{ name }}</a></p>
+        {% endfor %}
+        <br>
+        <a href="{% url 'welcome' %}">Back to main page</a>
+        </div>
+    </center>
+</body>
+</html>

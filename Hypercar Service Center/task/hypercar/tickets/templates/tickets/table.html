@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include 'tickets/base.html' %}
+<body>
+
+<div>
+    {% if next_ticket %}
+    Next ticket #{{ next_ticket }}
+    {% else %}
+    Waiting for the next client
+    {% endif %}
+</div>
+<br>
+<a href="{% url 'welcome' %}">Back to main page</a>
+
+</body>
+</html>

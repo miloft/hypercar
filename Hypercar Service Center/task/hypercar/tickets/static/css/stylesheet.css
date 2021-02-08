@@ -1,0 +1,23 @@
+
+.sheet {
+    background:#000000;
+    font-size:20px;
+}
+
+#head {
+color: #FFFFFF;
+text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #FF2D95 0px 0px 20px, #FF2D95 0px 0px 30px,
+#FF2D95 0px 0px 40px, #FF2D95 0px 0px 50px, #FF2D95 0px 0px 75px;
+}
+
+.items {
+font-size: 25px;
+letter-spacing: 2px;
+word-spacing: 2px;
+color: #ffef63;
+font-weight: normal;
+text-decoration: none;
+font-style: normal;
+font-variant: normal;
+text-transform: none;
+}
