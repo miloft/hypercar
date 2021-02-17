@@ -1,17 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-{% include 'tickets/base.html' %}
-<body>
+{% extends 'tickets/base.html' %}
 
-<div>
-    {% if next_ticket %}
-    Next ticket #{{ next_ticket }}
-    {% else %}
-    Waiting for the next client
-    {% endif %}
+{% block content %}
+<div class="main">
+    <br>
+    <div style="font-size: xx-large; margin-top: 25%; text-align: center">
+        {% if next_ticket %}
+        Next ticket #{{ next_ticket }}
+        {% else %}
+        Waiting for the next client
+        {% endif %}
+    </div>
 </div>
-<br>
-<a href="{% url 'welcome' %}">Back to main page</a>
-
-</body>
-</html>
+{% endblock %}

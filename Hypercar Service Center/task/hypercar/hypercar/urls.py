@@ -1,4 +1,7 @@
+from django.conf.urls.static import static
 from django.urls import path
+
+from hypercar import settings
 from tickets.views import WelcomeView, MenuView, TicketView, OperatorView, TableView
 from django.views.generic.base import RedirectView
 
@@ -14,4 +17,4 @@ urlpatterns = [
     path('next', TableView.as_view(), name='next_ticket'),
 
     path('', RedirectView.as_view(url='welcome/'))
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

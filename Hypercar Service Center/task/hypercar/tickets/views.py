@@ -11,14 +11,9 @@ class WelcomeView(View):
 
 
 class MenuView(View):
-    services = {
-        'change_oil': 'Change Oil',
-        'inflate_tires': 'Inflate Tires',
-        'diagnostic': 'Diagnostic'
-    }
 
     def get(self, request, *args, **kwargs):
-        return render(request, 'tickets/menu.html', context={'services': self.services})
+        return render(request, 'tickets/menu.html')
 
 
 queue = Queue()

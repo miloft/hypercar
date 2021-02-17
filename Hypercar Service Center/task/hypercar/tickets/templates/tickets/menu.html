@@ -1,17 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-{% include 'tickets/base.html' %}
-<body class="sheet">
-    <center>
-        <h1 id="head">Menu</h1>
-        <div class="items">
-        <p>Change the service:</p>
-        {% for ref, name in services.items %}
-            <p><a href="/get_ticket/{{ ref }}">{{ name }}</a></p>
-        {% endfor %}
-        <br>
-        <a href="{% url 'welcome' %}">Back to main page</a>
+{% extends 'tickets/base.html' %}
+
+{% block styles %}
+    <link rel="stylesheet" href="../static/css/menu_style.css">
+{% endblock %}
+
+{% block content %}
+{% load static %}
+<div class="main">
+    <div class="help"><br>HOW CAN WE HELP YOU?<br><br><br></div>
+
+    <div class="flex-container services">
+        <div class="flex-item srv-btn">
+            <img src="{% static 'img/diagnostic.png' %}" class="serv">
+            <div>DIAGNOSTIC</div>
+            <div class="time">30 min</div><br>
+            <a href="/get_ticket/diagnostic">
+                <button class="button-srv-1">CHOOSE</button>
+            </a>
         </div>
-    </center>
-</body>
-</html>
+        <div class="flex-item srv-btn">
+            <img src="{% static 'img/tire.png' %}" class="serv">
+            <div>INFLATE TIRES</div>
+            <div class="time">5 min</div><br>
+            <a href="/get_ticket/inflate_tires">
+                <button class="button-srv-2">CHOOSE</button>
+            </a>
+        </div>
+        <div class="flex-item srv-btn">
+            <img src="{% static 'img/oil.png' %}" class="serv">
+            <div>CHANGE OIL</div>
+            <div class="time">2 min</div><br>
+            <a href="/get_ticket/change_oil">
+                <button class="button-srv-3">CHOOSE</button>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

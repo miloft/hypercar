@@ -1,15 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-{% include 'tickets/base.html' %}
-<body>
-    <div>Change oil queue: {{ change_oil }}</div>
-    <div>Inflate tires queue: {{ inflate_tires }}</div>
-    <div>Get diagnostic queue: {{ diagnostic }}</div>
+{% extends 'tickets/base.html' %}
+
+{% block styles %}
+    <link rel="stylesheet" href="../static/css/menu_style.css">
+    <link rel="stylesheet" href="../static/css/operator_menu.css">
+{% endblock %}
+
+{% block content %}
+<div class="main">
     <br>
-    <form method="post">{% csrf_token %}
-        <button type="submit">Process next</button>
-    </form>
-    <br>
-    <a href="{% url 'welcome' %}">Back to main page</a>
-</body>
-</html>
+    <div class="title">QUEUE SIZE</div>
+    <div class="wrapper">
+        <div class="row">
+            <div class="col title">Change oil</div>
+            <div class="col title">Inflate tires</div>
+            <div class="col title">Diagnostic</div>
+        </div>
+        <div class="row">
+            <div class="col">{{ change_oil }}</div>
+            <div class="col">{{ inflate_tires }}</div>
+            <div class="col">{{ diagnostic }}</div>
+        </div>
+        <form method="post">{% csrf_token %}
+            <button type="submit">Process next</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
