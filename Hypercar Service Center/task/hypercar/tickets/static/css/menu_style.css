@@ -1,0 +1,45 @@
+.services {
+    flex-flow: row;
+    align-items: center;
+}
+
+.main {
+    text-align: center;
+}
+
+.help {
+    font-size: xx-large;
+}
+
+.srv-btn {
+    margin: 10px;
+    height: 170px;
+    width: 170px;
+    opacity: 0.9;
+}
+
+.srv-btn:hover {
+    opacity: 1;
+}
+
+.button-srv-1, .button-srv-2, .button-srv-3 {
+    background-color: brown;
+    color: whitesmoke;
+    border: 10px solid brown;
+    border-radius: 5px;
+    align-items: flex-end;
+}
+
+.flex-container {
+    justify-content: center;
+    align-items: baseline;
+}
+
+.serv {
+    width: 100px;
+    height: auto;
+}
+
+.time {
+    font-size: small;
+}
